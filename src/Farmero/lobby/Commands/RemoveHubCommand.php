@@ -13,10 +13,10 @@ class RemoveHubCommand extends Command {
 
     private $plugin;
 
-    public function __construct(Lobbh $plugin) {
+    public function __construct(Lobby $plugin) {
         parent::__construct("removehub");
         $this->setLabel("removehub");
-        $this->description("Remove the hub");
+        $this->setDescription("Remove the hub");
         $this->setAliases(["removelobby", "removespawn"]);
         $this->setPermission("lobby.cmd.removehub");
         $this->plugin = $plugin;
