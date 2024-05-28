@@ -29,7 +29,7 @@ class UpdateHubCommand extends Command {
             return false;
         }
 
-        $this->hubManager->updateHubLocation($sender->getPosition(), $sender->getWorld()->getFolderName());
+        $this->plugin->getHubManager()->updateHubLocation($sender->getPosition(), $sender->getWorld()->getFolderName());
         $sender->sendMessage("Hub location updated!");
         return true;
     }
