@@ -12,7 +12,7 @@ use Farmero\lobby\Lobby;
 
 class SetHubCommand extends Command {
 
-    private $plugin
+    private $plugin;
 
     public function __construct(Lobby $plugin) {
         parent::__construct("sethub");
