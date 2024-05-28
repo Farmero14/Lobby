@@ -1,0 +1,15 @@
+name: Lobby
+version: 1.0.0
+author: Farmero
+api: 5.0.0
+main: Farmero\lobby\Lobby
+
+permissions:
+  lobby.cmd.hub:
+    default: true
+  lobby.cmd.sethub:
+    default: op
+  lobby.cmd.removehub:
+    defualt: op
+  lobby.cmd.updatehub:
+    default: op
