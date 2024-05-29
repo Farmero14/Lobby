@@ -51,15 +51,8 @@ class HubManager {
     }
 
     public function teleportPlayerToHub(Player $player): void {
-        $hubLocation = $this->getHubLocation();
-        if ($hubLocation === null) {
-            $player->sendMessage("Hub location not found.");
-            return;
-        }
-
         $this->loadChunks($player, $hubLocation->getWorld(), $hubLocation->getX() >> 4, $hubLocation->getZ() >> 4);
         $player->teleport($hubLocation);
-        $player->sendMessage("Teleported to the hub.");
     }
 
     private function loadChunks(Player $player, World $world, int $chunkX, int $chunkZ): void {
