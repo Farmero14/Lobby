@@ -45,6 +45,11 @@ class HubManager {
         return new Position($this->hubLocation["x"], $this->hubLocation["y"], $this->hubLocation["z"], $world);
     }
 
+    public function removeHubLocation(): void {
+        $this->hubLocation = [];
+        $this->save();
+    }
+
     public function teleportPlayerToHub(Player $player): void {
         $hubLocation = $this->getHubLocation();
         if ($hubLocation === null) {
