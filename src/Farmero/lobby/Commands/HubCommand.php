@@ -29,6 +29,11 @@ class HubCommand extends Command {
             return false;
         }
 
+        $hubLocation = $this->plugin->getHubManager()->getHubLocation();
+        if ($hubLocation === null) {
+            $sender->sendMessage("Hub location not found. Please set the hub location first.");
+            return false;
+        }
         $this->plugin->getHubManager()->teleportPlayerToHub($sender);
         $sender->sendMessage("Teleported to the hub!");
         $sender->sendTitle("Teleported!");
