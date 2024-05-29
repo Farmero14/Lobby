@@ -69,6 +69,18 @@ class HubManager {
         $player->getWorld()->loadChunk($chunkX + 1, $chunkZ + 1);
     }
 
+    public function updateHubLocation(Position $position, string $worldName): void {
+        if ($this->hubLocation !== null) {
+            $this->hubLocation["x"] = $position->getX();
+            $this->hubLocation["y"] = $position->getY();
+            $this->hubLocation["z"] = $position->getZ();
+            $this->hubLocation["world"] = $worldName;
+            $this->save();
+        } else {
+            $this->setHubLocation($position, $worldName);
+        }
+    }
+
     private function save(): void {
         file_put_contents($this->filePath, json_encode($this->hubLocation, JSON_PRETTY_PRINT));
     }
