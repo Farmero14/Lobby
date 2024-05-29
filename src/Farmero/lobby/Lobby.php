@@ -22,10 +22,10 @@ class Lobby extends PluginBase implements Listener {
         $this->hubManager = new HubManager($this->getDataFolder());
 
         $this->getServer()->getCommandMap()->registerAll("Lobby", [
-	    new HubCommand($this->hubManager),
-	    new SetHubCommand($this->hubManager),
-            new RemoveHubCommand($this->hubManager),
-            new UpdateHubCommand($this->hubManager)
+	    new HubCommand($this),
+	    new SetHubCommand($this),
+            new RemoveHubCommand($this),
+            new UpdateHubCommand($this)
 	    ]);
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
